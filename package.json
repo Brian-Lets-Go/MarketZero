@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Brian-Lets-Go/MerketZero#readme",
   "devDependencies": {
     "concurrently": "^7.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1"
   }
 }
