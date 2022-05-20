@@ -26,6 +26,7 @@ const typeDefs = gql`
         username: String
         email: String
         items: Item
+        age: Int
     }
 
     type Query {
