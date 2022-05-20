@@ -21,6 +21,11 @@ const userSchema = new Schema({
         required: true,
         minlength: 6
     },
+    age: {
+        type: Number,
+        required: true,
+        min: 17
+    },
     items: [{
         type: Schema.Types.ObjectId,
         ref: 'Item'
