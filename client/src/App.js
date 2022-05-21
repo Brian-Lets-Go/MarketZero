@@ -13,6 +13,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -30,6 +32,10 @@ function App() {
         <Header />
         <div className="container">
           <Home />
+        </div>
+        <div>
+          <Login />
+          <Signup />
         </div>
         <Footer />
       </div>
