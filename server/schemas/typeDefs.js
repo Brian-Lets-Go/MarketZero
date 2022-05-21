@@ -29,11 +29,20 @@ const typeDefs = gql`
         age: Int
     }
 
+    type Auth {
+        token: ID
+        user: User
+    }
+
     type Query {
         users: [User]
         categories: [Category]
         items(category: ID): [Item]
         item(_id: ID!): Item
+    }
+
+    type Mutation {
+        addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     }
     
 `;
