@@ -1,5 +1,9 @@
 import { useQuery } from '@apollo/client';
 import { QUERY_THOUGHTS } from '../utils/queries';
+import '../index.css';
+import "../fonts/BancoRegular.woff";
+import logo from '../images/logo-04.jpg'
+
 
 import ThoughtList from '../components/ThoughtList';
 const Home = () => {
@@ -11,6 +15,7 @@ const Home = () => {
     return (
         <main>
           <div className='flex-row justify-space-between'>
+          <img src= {logo} className='logo' alt="logo for market zero"/>
           <div className="col-12 mb-3">
       {loading ? (
         <div>Loading...</div>
