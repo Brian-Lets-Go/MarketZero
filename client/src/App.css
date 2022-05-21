@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "BancoRegular";
+  src: local("BancoRegular"), url("./fonts/BancoRegular.woff") format("woff");
+}
+
 .App {
   text-align: center;
 }
@@ -17,6 +22,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  font-family: "BancoRegular";
   flex-direction: column;
   align-items: center;
   justify-content: center;
