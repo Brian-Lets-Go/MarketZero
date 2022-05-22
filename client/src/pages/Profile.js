@@ -1,4 +1,5 @@
 import React from 'react';
+// the useParams Hook retrieves the username from the URL which is then passed to the useQuery Hook
 import { useParams } from 'react-router-dom';
 
 import ItemList from '../components/ItemList';

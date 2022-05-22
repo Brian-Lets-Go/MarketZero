@@ -1,4 +1,5 @@
 import React from 'react';
+// import new React Hook
 import { useParams } from 'react-router-dom';
 
 import CommentList from '../components/CommentList';
@@ -8,6 +9,7 @@ import { QUERY_ITEM } from '../utils/queries';
 
 const SingleItem = (props) => {
   const { id: itemId } = useParams();
+  console.log(itemId);
 
   const { loading, data } = useQuery(QUERY_ITEM, {
     variables: { id: itemId },
@@ -26,7 +28,7 @@ const SingleItem = (props) => {
           <span style={{ fontWeight: 700 }} className="text-light">
             {item.username}
           </span>{' '}
-          item is {item.createdAt}
+          item uploaded on {item.createdAt}
         </p>
         <div className="card-body">
           <p>{item.itemText}</p>
