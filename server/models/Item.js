@@ -23,14 +23,14 @@ const itemSchema = new Schema({
       {
         type: Schema.Types.ObjectId,
         ref: 'Condition',
-        required: true,
+        // required: true,
       }
     ],
     category: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Category',
-        required: true
+        // required: true
       }
     ],
     comments: [

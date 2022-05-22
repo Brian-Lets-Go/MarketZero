@@ -3,63 +3,42 @@
       "name": "Bowling Ball",
       "description": "I bowled my first 300 with this ball.",
       "image": "Coming soon",
-      "price": 55,
-      "condition_its_condition_is_in": 1,
-      "category": 1,
-      "comments": 1
+      "price": 55
     },
     {
       "name": "White Russian",
       "description": "This is the only drink you will ever want.",
       "image": "Coming soon",
-      "price": 7,
-      "condition_its_condition_is_in": 4,
-      "category": 2,
-      "comments": ""
+      "price": 7
     },
     {
       "name": "Rug",
       "description": "It really ties the room together",
       "image": "Coming soon",
-      "price": 30,
-      "condition_its_condition_is_in": 3,
-      "category": 3,
-      "comments": 1
+      "price": 30
     },
     {
       "name": "Living Room Rug",
       "description": "It was a familt heirloom",
       "image": "Coming soon",
-      "price": 20,
-      "condition_its_condition_is_in": 2,
-      "category": 3,
-      "comments": ""
+      "price": 20
     },
     {
       "name": "Folgers Can",
       "description": "It's a modest recepticle",
       "image": "Coming soon",
-      "price": 5,
-      "condition_its_condition_is_in": 3,
-      "category": 4,
-      "comments": 2
+      "price": 5
     },
     {
       "name": "Eagles Album",
       "description": "Maybe you like the eagles. Maybe you don't",
       "image": "Coming soon",
-      "price": 3,
-      "condition_its_condition_is_in": 1,
-      "category": 5,
-      "comments": ""
+      "price": 3
     },
     {
       "name": "Bowling Shoes",
       "description": "You will bowl better in these",
       "image": "Coming soon",
-      "price": 15,
-      "condition_its_condition_is_in": 2,
-      "category": 5,
-      "comments": ""
+      "price": 15
     }
 ]
