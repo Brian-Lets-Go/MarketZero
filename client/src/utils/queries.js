@@ -51,3 +51,35 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+{
+    me {
+        _id
+        username
+        email
+        items {
+        _id
+        itemText
+        createdAt
+        commentCount
+        comments {
+            _id
+            createdAt
+            commentBody
+            username
+        }
+        }
+    }
+}
+`;
+
+export const QUERY_ME_BASIC = gql`
+  {
+    me {
+      _id
+      username
+      email
+    }
+  }
+`;
