@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloProvider, 
-  ApolloClient, 
+import { ApolloClient,  
   InMemoryCache, 
+  ApolloProvider,
   createHttpLink 
 } from '@apollo/client';
 
 import './App.css';
-
 import "./fonts/BancoRegular.woff";
 
 import Header from './components/Header';
@@ -41,19 +40,19 @@ function App() {
             element={<Home />}
             />
             <Route
-            path="/"
+            path="/login"
             element={<Login />}
             />
             <Route
-            path="/"
+            path="/signup"
             element={<Signup />}
             />
             <Route
-            path="/"
+            path="/profile"
             element={<Profile />}
             />
             <Route 
-            path="/"
+            path="/item/:id"
             element={<SingleItem />}
             />
             </Routes>

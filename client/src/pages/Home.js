@@ -1,16 +1,18 @@
+import React from 'react';
+import ItemList from '../components/ItemList';
+
 import { useQuery } from '@apollo/client';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_ITEMS } from '../utils/queries';
+
 import '../index.css';
 import "../fonts/BancoRegular.woff";
 import logo from '../images/logo-04.jpg'
 
-
-import ThoughtList from '../components/ThoughtList';
 const Home = () => {
-    const { loading, data } = useQuery(QUERY_THOUGHTS);
+    const { loading, data } = useQuery(QUERY_ITEMS);
 
-    const thoughts = data?.thoughts || [];
-    console.log(thoughts);
+    const items = data?.items || [];
+    console.log(items);
 
     return (
         <main>
@@ -20,7 +22,7 @@ const Home = () => {
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <ThoughtList thoughts={thoughts} title="Some Feed for Thought(s)..." />
+        <ItemList items={items} title="Some Feed for Item(s)..." />
       )}
     </div>
           </div>
