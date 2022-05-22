@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+
+import Auth from '../utils/auth';
 
 const Signup = () => {
-  const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', email: '', age: '', password: '' });
+  const [addUser, { error }] = useMutation(ADD_USER);
 
 // update state based on form input changes
   const handleChange = event => {
@@ -16,8 +21,19 @@ const Signup = () => {
 // submit form
   const handleFormSubmit = async event => {
     event.preventDefault();
+
+    try {
+        const { data } = await addUser({
+          variables: { ...formState },
+        });
+  
+        Auth.login(data.addUser.token);
+      } catch (e) {
+        console.error(e);
+      }
   };
 
+  
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
@@ -45,6 +61,15 @@ const Signup = () => {
               />
               <input
                 className="form-input"
+                placeholder="How many years old are you"
+                name="age"
+                type="number"
+                id="age"
+                value={formState.age}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
                 placeholder="******"
                 name="password"
                 type="password"
@@ -56,6 +81,8 @@ const Signup = () => {
                 Submit
               </button>
             </form>
+
+            {error && <div>Signup failed</div>}
           </div>
         </div>
       </div>
