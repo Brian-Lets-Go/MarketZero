@@ -75,6 +75,21 @@ const resolvers = {
 
             const token = signToken(user);
             return { token, user };
+        },
+        addItem: async (parent, args, context) => {
+            if (context.user) {
+                const item = await Item.create({ ...args, username: context.user.username});
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user.id},
+                    { $push: { items: item._id } },
+                    { new: true }
+                );
+
+                return item;
+            }
+
+            throw new AuthenticationError('You need to be logged in!');
         }
     }
 };
