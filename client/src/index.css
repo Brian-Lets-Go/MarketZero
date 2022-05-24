@@ -10,6 +10,27 @@
   font-family: "MagnetoBoldExtended";
   src: local("MagnetoBoldExtended"), url("./fonts/MagnetoBoldExtended.ttf") format("truetype");
 }
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+.logo {
+  max-width:1000px;
+  max-height: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 :root {
   --primary: #7fa8a2;
   --secondary: #cdbaac;
