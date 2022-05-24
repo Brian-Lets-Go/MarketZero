@@ -13,7 +13,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import Home from './pages/Home';
-import verifiedHome from './pages/Verified-Home';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
