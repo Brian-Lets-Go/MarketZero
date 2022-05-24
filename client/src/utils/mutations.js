@@ -23,3 +23,11 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_ITEM = gql `
+mutation addItem($name: String!, $description: String!, $image: String, $price: Float, $condition_its_condition_is_in: String!, $category: String! ) {
+  addItem(name: $name, description: $description, image: $image, price: $price, condition_its_condition_is_in: $condition_its_condition_is_in, category: $category) {
+    item
+  }
+}
+`;

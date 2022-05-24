@@ -19,26 +19,21 @@ const itemSchema = new Schema({
       required: true,
       min: 0.69
     },
-    condition_its_condition_is_in: [
+    condition_its_condition_is_in:  {
+      type: String,
+      required: true
+      },
+    category: 
       {
-        type: Schema.Types.ObjectId,
-        ref: 'Condition',
-        required: true,
-      }
-    ],
-    category: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Category',
+        type: String,
         required: true
-      }
-    ],
-    comments: [
+      },
+    comments: 
       {
         type: Schema.Types.ObjectId,
         ref: 'Comment'
       }
-    ]
+    
 });
 
 const Item = mongoose.model('Item', itemSchema);
