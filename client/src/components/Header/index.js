@@ -35,7 +35,7 @@ import Auth from '../../utils/auth';
           <header className="bg-secondary mb-4 py-2 flex-row align-center">
             <div className="container flex-row justify-space-between-lg justify-center align-center">
                 <Link to='/'>
-              <h1>MARKET ZERO.</h1>
+              
               <img src= {logo} className='logo' alt="logo for market zero" />
               </Link>
 
