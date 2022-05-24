@@ -3,6 +3,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import ItemList from '../components/ItemList';
+import ItemForm from '../components/ItemForm';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -50,6 +51,7 @@ const Profile = (props) => {
         </div>
 
       </div>
+      <div className="mb-3">{!userParam && <ItemForm />}</div>
     </div>
   );
 };

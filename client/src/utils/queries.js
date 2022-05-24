@@ -7,6 +7,8 @@ export const QUERY_ITEMS = gql`
       name
       description
       price
+      condition_its_condition_is_in
+      category   
     }
   }
 `;
@@ -29,6 +31,8 @@ export const QUERY_ITEM = gql`
       name
       description
       price
+      condition_its_condition_is_in
+      category   
     }
   }
 `;
@@ -55,6 +59,8 @@ export const QUERY_USER = gql`
         name
         description
         price
+        condition_its_condition_is_in
+        category   
       }
     }
   }
@@ -73,6 +79,8 @@ export const QUERY_ME = gql`
         name
         description
         price
+        condition_its_condition_is_in
+        category   
         }
     }
 }

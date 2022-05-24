@@ -17,8 +17,8 @@ const typeDefs = gql`
         description: String
         image: String
         price: Float
-        condition_its_condition_is_in: Condition
-        category: Category
+        condition_its_condition_is_in: String
+        category: String
     }
 
     type User {
