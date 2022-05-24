@@ -20,11 +20,21 @@ const Signup = () => {
 
 // submit form
   const handleFormSubmit = async event => {
+
     event.preventDefault();
+    console.log('formState',formState )
 
     try {
         const { data } = await addUser({
-          variables: { ...formState }
+          variables: { 
+
+            username: formState.username,
+            email: formState.email, 
+            password: formState.password, 
+            age: parseInt(formState.age)
+
+
+           }
         });
   
         Auth.login(data.addUser.token);

@@ -26,7 +26,7 @@ const ItemList = ({ items }) => {
               <Link to={`/item/${item._id}`}>
                 <p>{item.name}</p>
                 <p className="mb-0">
-                  Description: {item.description} 
+                  Description: {item.description}
                 </p>
                 <p> Price: {item.price} </p>
               </Link>
