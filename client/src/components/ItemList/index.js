@@ -24,11 +24,13 @@ const ItemList = ({ items }) => {
             </p> */}
             <div className="card-body">
               <Link to={`/item/${item._id}`}>
-                <p>{item.name}</p>
+                <h4>{item.name}</h4>
+                <p>{item.category}</p>
                 <p className="mb-0">
                   Description: {item.description}
                 </p>
                 <p> Price: {item.price} </p>
+                <p>Condition its condition is in: {item.condition_its_condition_is_in}</p>
               </Link>
             </div>
           </div>
