@@ -24,7 +24,7 @@ const Signup = () => {
 
     try {
         const { data } = await addUser({
-          variables: { ...formState },
+          variables: { ...formState }
         });
   
         Auth.login(data.addUser.token);
@@ -77,7 +77,7 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit" onSubmit={handleFormSubmit}>
+              <button  className="btn d-block w-100" type="submit">
                 Submit
               </button>
             </form>

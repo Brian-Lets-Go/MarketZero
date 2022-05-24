@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Item, Category, Condition, Comment } = require('../models');
+const { User, Item, Comment } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -17,15 +17,12 @@ const resolvers = {
         users: async () => {
             return await User.find();
         },
-        categories: async () => {
-            return await Category.find();
-        },
         items: async (parent, { category, name }) => {
             const params = {};
 
-            if (category) {
-                params.category = category;
-            }
+            // if (category) {
+            //     params.category = category;
+            // }
 
             // if (name) {
             //     params.name = {
@@ -79,7 +76,6 @@ const resolvers = {
         addItem: async (parent, args, context) => {
             if (context.user) {
                 const item = await Item.create({ ...args, username: context.user.username});
-
                 await User.findByIdAndUpdate(
                     { _id: context.user.id},
                     { $push: { items: item._id } },

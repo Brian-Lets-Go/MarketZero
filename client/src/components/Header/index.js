@@ -4,6 +4,8 @@ import '../../index.css';
 import "../../fonts/BancoRegular.woff";
 import logo from '../../images/logo-04.jpg'
 
+import Auth from '../../utils/auth';
+
 // const resizeImage = () => {
 //     this.style.maxwidth=10;
 // }
@@ -25,6 +27,10 @@ import logo from '../../images/logo-04.jpg'
 //     }
 
  const Header = () => {
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+      };
         return (
           <header className="bg-secondary mb-4 py-2 flex-row align-center">
             <div className="container flex-row justify-space-between-lg justify-center align-center">
@@ -34,8 +40,19 @@ import logo from '../../images/logo-04.jpg'
               </Link>
 
             <nav className="text-center">
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
+                {Auth.loggedIn() ? (
+                    <>
+                    <Link to='/profile'>My Account</Link>
+                    <a href='/' onClick={logout}>
+                        Logout
+                    </a>
+                    </>
+                ) : (
+                    <>
+                    <Link to="/login">Login</Link>
+                    <Link to="/signup">Signup</Link>
+                    </>
+                )}
             </nav>
 
             </div>
