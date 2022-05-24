@@ -4,37 +4,45 @@ export const QUERY_ITEMS = gql`
   query items($username: String) {
     items(username: $username) {
       _id
-      itemText
-      createdAt
-      username
-      commentCount
-      comments {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
+      name
+      description
+      price
     }
   }
 `;
+
+// itemText
+//       createdAt
+//       username
+//       commentCount
+//       comments {
+//         _id
+//         createdAt
+//         username
+//         reactionBody
+//       }
 
 export const QUERY_ITEM = gql`
   query item($id: ID!) {
     item(_id: $id) {
       _id
-      itemText
-      createdAt
-      username
-      commentCount
-      comments {
-        _id
-        createdAt
-        username
-        commentBody
-      }
+      name
+      description
+      price
     }
   }
 `;
+
+// itemText
+//       createdAt
+//       username
+//       commentCount
+//       comments {
+//         _id
+//         createdAt
+//         username
+//         commentBody
+//       }
 
 export const QUERY_USER = gql`
   query user($username: String!) {
@@ -44,13 +52,15 @@ export const QUERY_USER = gql`
       email
       items {
         _id
-        itemText
-        createdAt
-        commentCount
+        name
+        description
+        price
       }
     }
   }
 `;
+
+
 
 export const QUERY_ME = gql`
 {
@@ -60,15 +70,9 @@ export const QUERY_ME = gql`
         email
         items {
         _id
-        itemText
-        createdAt
-        commentCount
-        comments {
-            _id
-            createdAt
-            commentBody
-            username
-        }
+        name
+        description
+        price
         }
     }
 }
