@@ -1,52 +1,49 @@
-const commentSchema = require('./Comment');
 const { Schema, model } = require('mongoose');
+const commentSchema = require('./Comment');
+const dateFormat = require('../utils/dateFormat');
 
-const itemSchema = new Schema(
-  {
-    name: {
+const itemSchema = new Schema({
+  // name: {
+  //   type: String,
+  //   required: true,
+  //   trim: true
+  // },
+  description: {
+    type: String
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: timestamp => dateFormat(timestamp)
+  },
+  image: {
+    type: String
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0.69
+  },
+  condition_its_condition_is_in:  {
+    type: String,
+    // required: true
+    },
+  category:
+    {
       type: String,
-      required: true,
-      trim: true
+      // required: true
     },
-    description: {
-      type: String
-    },
-    image: {
-      type: String
-    },
-    price: {
-      type: Number,
-      required: true,
-      min: 0.69
-    },
-    username: {
-      type: String,
-      required: true
-    },
-    condition_its_condition_is_in: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Condition',
-        required: true,
-      }
-    ],
-    category: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Category',
-        required: true
-      }
-    ],
-    comments: [commentSchema]
+  comments: [commentSchema]
 },
-{
-  toJSON: {
-    getters: true
+  {
+    toJSON: {
+      getters: true
+    }
   }
-}
 );
 
-itemSchema.virtual('commentCount').get(function() {
+itemSchema.virtual('commentCount').get(function()
+{
   return this.comments.length;
 });
 

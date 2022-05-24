@@ -3,10 +3,10 @@ const dateFormat = require('../utils/dateFormat');
 
 const commentSchema = new Schema(
     {
-      writtenBy: {
-        type: String,
-        required: true
-      },
+      // writtenBy: {
+      //   type: String,
+      //   required: true
+      // },
       commentBody: {
         type: String,
         required: true
@@ -25,7 +25,7 @@ const commentSchema = new Schema(
       toJSON: {
         getters: true
       },
-      id: false
+      // id: false
     }
 );
 
