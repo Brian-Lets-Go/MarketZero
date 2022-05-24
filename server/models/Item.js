@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const commentSchema = require('./Comment');
+const { Schema, model } = require('mongoose');
 
-const { Schema } = mongoose;
-
-const itemSchema = new Schema({
+const itemSchema = new Schema(
+  {
     name: {
       type: String,
       required: true,
@@ -19,6 +19,10 @@ const itemSchema = new Schema({
       required: true,
       min: 0.69
     },
+    username: {
+      type: String,
+      required: true
+    },
     condition_its_condition_is_in: [
       {
         type: Schema.Types.ObjectId,
@@ -33,14 +37,19 @@ const itemSchema = new Schema({
         required: true
       }
     ],
-    comments: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-      }
-    ]
+    comments: [commentSchema]
+},
+{
+  toJSON: {
+    getters: true
+  }
+}
+);
+
+itemSchema.virtual('commentCount').get(function() {
+  return this.comments.length;
 });
 
-const Item = mongoose.model('Item', itemSchema);
+const Item = model('Item', itemSchema);
 
 module.exports = Item;

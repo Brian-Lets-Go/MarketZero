@@ -19,10 +19,9 @@ const startServer = async () => {
     server.applyMiddleware({ app });
 };
 
-startServer();
 
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 db.once('open', () => {
@@ -32,3 +31,4 @@ db.once('open', () => {
     });
   });
   
+  startServer();

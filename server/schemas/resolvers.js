@@ -20,12 +20,12 @@ const resolvers = {
         categories: async () => {
             return await Category.find();
         },
-        items: async (parent, { category, name }) => {
-            const params = {};
+        items: async (parent, { username }) => {
+            const params = username ? { username } : {};
 
-            if (category) {
-                params.category = category;
-            }
+            // if (category) {
+            //     params.category = category;
+            // }
 
             // if (name) {
             //     params.name = {
@@ -33,7 +33,7 @@ const resolvers = {
             //     };
             // }
 
-            return await Item.find(params).populate('category');
+            return Thought.find(params).sort({ createdAt: -1 });
         },
         item: async (parent, { _id }) => {
             return await Item.findById(_id).populate('category');

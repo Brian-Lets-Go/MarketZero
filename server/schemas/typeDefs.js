@@ -13,11 +13,21 @@ const typeDefs = gql`
         _id: ID
         name: String
         description: String
+        username: String
+        commentCount: Int
+        comments: [Comment]
         image: String
         price: Float
         condition_its_condition_is_in: Condition
         category: Category
     }
+    type Comment {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
+    }
+
     type User {
         _id: ID
         username: String
@@ -33,7 +43,7 @@ const typeDefs = gql`
         me: User
         users: [User]
         categories: [Category]
-        items(category: ID): [Item]
+        items(username: String): [Item]
         item(_id: ID!): Item
     }
     type Mutation {
