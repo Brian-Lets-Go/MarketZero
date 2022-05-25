@@ -8,10 +8,11 @@ import { QUERY_ITEMS, QUERY_ME } from '../../utils/queries';
 
 const ItemForm = () => {
     const [name, setName] = useState("");
-    const [price, setPrice] = useState();
-    const [category, setCategory] = useState(null);
+    const [price, setPrice] = useState(0);
+    const [category, setCategory] = useState('Bowling');
     const [description, setDescription] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
+    const [condition_its_condition_is_in, setCondition] = useState('Gutter Bad');
     
     const [addItem, { error }] = useMutation(ADD_ITEM, {
         // read what is currently in the cache
@@ -54,6 +55,7 @@ const ItemForm = () => {
                   description, 
                   name,
                   price,
+                  condition_its_condition_is_in,
                   category
                }
             });
@@ -68,7 +70,7 @@ const ItemForm = () => {
         
       };
   return (
-    <div class="main-form">
+    <div className="main-form">
         <h3>Item Form</h3>
         
         <p
@@ -83,7 +85,7 @@ const ItemForm = () => {
           
       
 
-      <label for="item-name">Name</label>
+      <label htmlFor="item-name">Name</label>
   <input className="btn col-12 col-md-8"  type="text" placeholder="Item Name" id="item-name" name="item-name" onBlur={(e) => {
       console.log(name)
       setName(e.target.value)
@@ -92,19 +94,20 @@ const ItemForm = () => {
 
   
   
-  <label for="description">Description</label>
+  <label htmlFor="description">Description</label>
   <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange}id="description" name="description" onChange={handleChange} ></textarea>
 
   
 
-  <label for="quantity">Price</label>
+  <label htmlFor="quantity">Price</label>
 <input className="btn col-12 col-md-8" placeholder="Item Price" type="number" id="quantity" name="quantity" onBlur={(e) => {
     console.log(price)
-    setPrice(e.target.value)
+    setPrice(parseFloat(e.target.value))
+    console.log(price)
 }}></input>
 
         
-        <label for="category-names">Choose a category: </label>
+        <label htmlFor="category-names">Choose a category: </label>
         <select className="btn col-12 col-md-8" name="category-names" id="category-names">
             <option value="bowling">Bowling</option>
             <option value="rugs">Rugs</option>
@@ -115,12 +118,12 @@ const ItemForm = () => {
         
    
         
-        <label for="condition-names">Condition Its Condition Is In: </label>
+        <label htmlFor="condition-names">Condition Its Condition Is In: </label>
         <select className="btn col-12 col-md-8" name="condition-names" id="condition-names">
-            <option value="gutter">Gutter "Bad"</option>
-            <option value="split">Split "Fair"</option>
-            <option value="spare">Spare "Good"</option>
-            <option value="strike">Strike "Excellent"</option>
+            <option value="gutter">Gutter Bad</option>
+            <option value="split">Split Fair</option>
+            <option value="spare">Spare Good</option>
+            <option value="strike">Strike Excellent</option>
         </select>
        
  

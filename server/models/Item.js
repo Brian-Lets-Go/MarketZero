@@ -8,6 +8,10 @@ const itemSchema = new Schema({
     required: true,
     trim: true
   },
+  username: {
+    type: String,
+    required: true
+  },
   description: {
     type: String
   },
@@ -32,6 +36,11 @@ const itemSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: 'Comment'
+    },
+    user:
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
 });
 
