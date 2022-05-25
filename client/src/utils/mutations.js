@@ -28,7 +28,9 @@ export const ADD_ITEM = gql`
   mutation addItem(
       $name: String!, 
       $description: String!, 
-      $price: Int!, $condition_its_condition_is_in: String!, $category: String!) {
+      $price: Float!, $condition_its_condition_is_in: String!, 
+      $category: String!,
+      ) {
     addItem(
         name: $name, 
         description: $description, 
@@ -40,10 +42,7 @@ export const ADD_ITEM = gql`
       price
       condition_its_condition_is_in
       category
-      commentCount
-      comments {
-        _id
-      }
+      
     }
   }
 `;

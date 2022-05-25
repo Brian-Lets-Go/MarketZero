@@ -8,7 +8,10 @@ export const QUERY_ITEMS = gql`
       description
       price
       condition_its_condition_is_in
-      category   
+      category  
+      user {
+        _id
+      } 
     }
   }
 `;
@@ -32,9 +35,28 @@ export const QUERY_ITEM = gql`
       description
       price
       condition_its_condition_is_in
-      category   
+      category 
+      user {
+          _id
+      }  
     }
   }
+`;
+
+export const USER_ITEMS = gql `
+    query item($user_id: ID!) {
+        item(user_id: $id) {
+            _id
+      name
+      description
+      price
+      condition_its_condition_is_in
+      category 
+      user {
+          _id
+      }  
+    }
+ }
 `;
 
 // itemText
