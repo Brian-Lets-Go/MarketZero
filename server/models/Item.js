@@ -21,11 +21,22 @@ const itemSchema = new Schema({
   category: {
     type: String,
   },
+
   // username: {
   //   type: String,
   //   required: true
   // }
-});
+  },
+  {
+    toJSON: {
+      virtuals: true
+    }
+  }
+);
+
+itemSchema.virtual("user").get(function() {
+    return server.context.user.username
+})
 
 const Item = model('Item', itemSchema);
 

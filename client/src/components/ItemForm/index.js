@@ -11,8 +11,8 @@ const ItemForm = () => {
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
-    const [category, setCategory] = useState('');
-    const [condition_its_condition_is_in, setCondition] = useState('');
+    const [category, setCategory] = useState('Bowling');
+    const [condition_its_condition_is_in, setCondition] = useState('Gutter Bad');
     
     const [addItem, { error }] = useMutation(ADD_ITEM, {
         update(cache, { data: { addItem } }) {
@@ -66,69 +66,56 @@ const ItemForm = () => {
       };
   
       return (
-    <div className="main-form">
-        <h3>Item Form</h3>
-        
-        <p
-        className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
-      >
-        Character Count: {characterCount}/280
-        {error && <span className="ml-2">Something went wrong...</span>}
-      </p>
-
-
-      <form className="flex-row justify-center justify-space-between-md align-stretch"  onSubmit={handleFormSubmit}>
-          
-      
-
-      <label htmlFor="item-name">Name</label>
-  <input className="btn col-12 col-md-8"  type="text" placeholder="Item Name" id="item-name" name="item-name" onBlur={(e) => {
-      console.log(name)
-      setName(e.target.value)
-      console.log(name)
-      }}></input>
-
-  
-  
-  <label htmlFor="description">Description</label>
-  <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange} id="description" name="description"></textarea>
-
-  
-
-  <label htmlFor="quantity">Price</label>
-<input className="btn col-12 col-md-8" placeholder="Item Price" type="number" id="quantity" name="quantity" onBlur={(e) => {
-    console.log(price)
-    setPrice(parseFloat(e.target.value))
-    console.log(price)
-}}></input>
-
-        
-        <label htmlFor="category-names">Choose a category: </label>
-        <select className="btn col-12 col-md-8" name="category-names" id="category-names">
-            <option value="bowling">Bowling</option>
-            <option value="rugs">Rugs</option>
-            <option value="Alcohol">Alcohol</option>
-            <option value="receptacles">Receptacles</option>
-            <option value="misc">Miscellaneous</option>
-        </select>
-        
-   
-        
-        <label htmlFor="condition-names">Condition Its Condition Is In: </label>
-        <select className="btn col-12 col-md-8" name="condition-names" id="condition-names">
-            <option value="gutter">Gutter Bad</option>
-            <option value="split">Split Fair</option>
-            <option value="spare">Spare Good</option>
-            <option value="strike">Strike Excellent</option>
-        </select>
-       
- 
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
-      </form>
-    </div>
-  );
-};
+        <div className="main-form">
+            <h3>Item Form</h3>
+            <p
+            className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
+          >
+            Character Count: {characterCount}/280
+            {error && <span className="ml-2">Something went wrong...</span>}
+          </p>
+          <form className="flex-row justify-center justify-space-between-md align-stretch"  onSubmit={handleFormSubmit}>
+          <label htmlFor="item-name">Name</label>
+      <input className="btn col-12 col-md-8"  type="text" placeholder="Item Name" id="item-name" name="item-name" onBlur={(e) => {
+          console.log(name)
+          setName(e.target.value)
+          console.log(name)
+          }}></input>
+      <label htmlFor="description">Description</label>
+      <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange}id="description" name="description"  ></textarea>
+      <label htmlFor="quantity">Price</label>
+    <input className="btn col-12 col-md-8" placeholder="Item Price" type="number" id="quantity" name="quantity" onBlur={(e) => {
+        console.log(price)
+        setPrice(parseFloat(e.target.value))
+        console.log(price)
+    }}></input>
+            <label htmlFor="category-names">Choose a category: </label>
+            <select className="btn col-12 col-md-8" name="category-names" id="category-names" onChange={(e) => {
+              setCategory(e.target.value)
+              console.log(category)
+            }}>
+                <option value="Bowling">Bowling</option>
+                <option value="Rugs">Rugs</option>
+                <option value="Alcohol">Alcohol</option>
+                <option value="Receptacles">Receptacles</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <label htmlFor="condition-names">Condition Its Condition Is In: </label>
+            <select className="btn col-12 col-md-8" name="condition-names" id="condition-names" onChange={(e) => {
+              setCondition(e.target.value)
+              console.log(condition_its_condition_is_in)
+            }}>
+                <option value="Gutter Bad">Gutter Bad</option>
+                <option value="Split Fair">Split Fair</option>
+                <option value="Spare Good">Spare Good</option>
+                <option value="Strike Excellent">Strike Excellent</option>
+            </select>
+            <button className="btn col-12 col-md-3" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      );
+    };
 
 export default ItemForm;
