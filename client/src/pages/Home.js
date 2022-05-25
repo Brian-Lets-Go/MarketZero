@@ -4,15 +4,14 @@ import ItemForm from '../components/ItemForm';
 
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
-import { QUERY_ITEMS } from '../utils/queries';
+import { QUERY_ITEMS, QUERY_ME_BASIC } from '../utils/queries';
 
 import '../index.css';
 import "../fonts/BancoRegular.woff";
-// import logo from '../images/logo-04.jpg'
 
 const Home = () => {
     const { loading, data } = useQuery(QUERY_ITEMS);
-
+    const { data: userData } = useQuery(QUERY_ME_BASIC);
 
     const items = data?.items || [];
     console.log(items);
@@ -30,13 +29,13 @@ const Home = () => {
           <div className={`col-12 mb-3 ${loggedIn &&'col-lg-8'}`}>
       {loading ? (
         <div>Loading...</div>
-      ) : (
-        <ItemList items={items} title="Some Feed for Item(s)..." />
-      )}
-    </div>
+          ) : (
+            <ItemList items={items} title="Some Item(s)..." />
+          )}
           </div>
-        </main>
-      );
+        </div>
+      </main>
+    );
 };
 
 export default Home;

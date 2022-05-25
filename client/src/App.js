@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient,  
+import { 
+  ApolloClient,  
   InMemoryCache, 
   ApolloProvider,
   createHttpLink 
 } from '@apollo/client';
-
 import { setContext } from '@apollo/client/link/context';
 
 import './App.css';
@@ -47,27 +47,12 @@ function App() {
         <Header />
         <div className="container">
           <Routes>
-            <Route
-            path="/"
-            element={<Home />}
-            />
-            <Route
-            path="/login"
-            element={<Login />}
-            />
-            <Route
-            path="/signup"
-            element={<Signup />}
-            />
-            <Route
-            path="/profile/:username?"
-            element={<Profile />}
-            />
-            <Route 
-            path="/item/:id"
-            element={<SingleItem />}
-            />
-            </Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/signup" element={<Signup />}/>
+            <Route path="/profile/:username?" element={<Profile />}/>
+            <Route path="/item/:id" element={<SingleItem />}/>
+          </Routes>
         </div>
         <Footer />
       </div>

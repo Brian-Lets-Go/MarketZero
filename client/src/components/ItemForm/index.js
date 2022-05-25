@@ -9,33 +9,30 @@ import { QUERY_ITEMS, QUERY_ME } from '../../utils/queries';
 const ItemForm = () => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState(0);
-    const [category, setCategory] = useState('Bowling');
     const [description, setDescription] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
-    const [condition_its_condition_is_in, setCondition] = useState('Gutter Bad');
+    const [category, setCategory] = useState('');
+    const [condition_its_condition_is_in, setCondition] = useState('');
     
     const [addItem, { error }] = useMutation(ADD_ITEM, {
-        // read what is currently in the cache
         update(cache, { data: { addItem } }) {
 
         try {
-            //update me array's cachce
-            const { me } = cache.readQuery({ query: QUERY_ME });
+            const { items } = cache.readQuery({ query: QUERY_ITEMS });
             cache.writeQuery({
-                query: QUERY_ME,
-                data: { me: { ...me, items: [...me.items, addItem ] } },
-            });
+                query: QUERY_ITEMS,
+                data: { items: [addItem, ...items] },
+          });
         } catch (e) {
             console.warn("First item insertion by user!")
         }
-            const { items } = cache.readQuery({ query: QUERY_ITEMS });
-
-        // prepend newest thought to front of the array
+        
+        const { me } = cache.readQuery({ query: QUERY_ME });
         cache.writeQuery({
-            query: QUERY_ITEMS,
-            data: { items: [addItem, ...items] }
+          query: QUERY_ME,
+          data: { me: { ...me, items: [...me.items, addItem] } },
         });
-        }
+      },
     });
 
     const handleChange = (event) => {
@@ -66,10 +63,9 @@ const ItemForm = () => {
           } catch (e) {
             console.error(e);
           }
-
-        
       };
-  return (
+  
+      return (
     <div className="main-form">
         <h3>Item Form</h3>
         
@@ -95,7 +91,7 @@ const ItemForm = () => {
   
   
   <label htmlFor="description">Description</label>
-  <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange}id="description" name="description" onChange={handleChange} ></textarea>
+  <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange} id="description" name="description"></textarea>
 
   
 
