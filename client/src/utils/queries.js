@@ -8,7 +8,7 @@ export const QUERY_ITEMS = gql`
       description
       price
       condition_its_condition_is_in
-      category     
+      category   
     }
   }
 `;
@@ -31,8 +31,13 @@ export const QUERY_ITEM = gql`
       name
       description
       price
+<<<<<<< HEAD
       category
       condition_its_condition_is_in
+=======
+      condition_its_condition_is_in
+      category   
+>>>>>>> bd27042d5f50721b8c4cecd46f2ed5cd600da666
     }
   }
 `;
@@ -59,8 +64,13 @@ export const QUERY_USER = gql`
         name
         description
         price
+<<<<<<< HEAD
         category
         condition_its_condition_is_in
+=======
+        condition_its_condition_is_in
+        category   
+>>>>>>> bd27042d5f50721b8c4cecd46f2ed5cd600da666
       }
     }
   }
@@ -79,8 +89,13 @@ export const QUERY_ME = gql`
         name
         description
         price
+<<<<<<< HEAD
         category
         condition_its_condition_is_in
+=======
+        condition_its_condition_is_in
+        category   
+>>>>>>> bd27042d5f50721b8c4cecd46f2ed5cd600da666
         }
     }
 }
