@@ -11,6 +11,8 @@ export const QUERY_ITEMS = gql`
       category  
       user {
         _id
+        username
+        email
       } 
     }
   }
@@ -38,26 +40,14 @@ export const QUERY_ITEM = gql`
       category 
       user {
           _id
+          username
+          email
       }  
     }
   }
 `;
 
-export const USER_ITEMS = gql `
-    query item($user_id: ID!) {
-        item(user_id: $id) {
-            _id
-      name
-      description
-      price
-      condition_its_condition_is_in
-      category 
-      user {
-          _id
-      }  
-    }
- }
-`;
+
 
 // itemText
 //       createdAt

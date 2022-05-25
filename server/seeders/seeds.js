@@ -9,14 +9,14 @@ const commentData = require('./commentData.json');
 db.once('open', async () => {
   // clean database
   await Item.deleteMany({});
-  await User.deleteMany({});
+  // await User.deleteMany({});
   await Comment.deleteMany({});
   
 
   // bulk create each model
   const comments = await Comment.insertMany(commentData);
   const items = await Item.insertMany(itemData);
-  const users = await User.insertMany(userData);
+  // const users = await User.insertMany(userData);
 
   console.log('all done!');
   process.exit(0);
