@@ -24,9 +24,7 @@ const resolvers = {
             //     params.category = category;
             // }
 
-            if (user_id) {
-                params.user_id =  user_id
-            };
+            
 
             return await Item.find(params).populate('category');
         },

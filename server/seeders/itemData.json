@@ -5,7 +5,8 @@
     "image": "Coming soon",
     "price": 55,
     "category": "Bowling",
-    "condition_its_condition_is_in": "Spare (good)"
+    "condition_its_condition_is_in": "Spare (good)",
+    "user": "628c539f35e12fe0f27fdf6c"
   },
   {
     "name": "White Russian",
@@ -13,7 +14,8 @@
     "image": "Coming soon",
     "price": 7,
     "category": "Alchohol",
-    "condition_its_condition_is_in": "Split (fair)"
+    "condition_its_condition_is_in": "Split (fair)",
+    "user": "628c539f35e12fe0f27fdf6c"
   },
   {
     "name": "Rug",
@@ -21,7 +23,8 @@
     "image": "Coming soon",
     "price": 30,
     "category": "Rugs",
-    "condition_its_condition_is_in": "Spare (good)"
+    "condition_its_condition_is_in": "Spare (good)",
+    "user": "628c539f35e12fe0f27fdf6c"
   },
   {
     "name": "Living Room Rug",
@@ -29,7 +32,8 @@
     "image": "Coming soon",
     "price": 20,
     "category": "Rugs",
-    "condition_its_condition_is_in": "Split (fair)"
+    "condition_its_condition_is_in": "Split (fair)",
+    "user": "628c539f35e12fe0f27fdf6c"
   },
   {
     "name": "Folgers Can",
@@ -37,7 +41,8 @@
     "image": "Coming soon",
     "price": 5,
     "category": "Berevement Receptical",
-    "condition_its_condition_is_in": "Gutter (poor)"
+    "condition_its_condition_is_in": "Gutter (poor)",
+    "user": "628c539f35e12fe0f27fdf6c"
   },
   {
     "name": "Eagles Album",
@@ -45,7 +50,8 @@
     "image": "Coming soon",
     "price": 3,
     "category": "Miscelleneous",
-    "condition_its_condition_is_in": "Spare (good)"
+    "condition_its_condition_is_in": "Spare (good)",
+    "user": "628c539f35e12fe0f27fdf6c"
   },
   {
     "name": "Bowling Shoes",
@@ -53,6 +59,7 @@
     "image": "Coming soon",
     "price": 15,
     "category": "Bowling",
-    "condition_its_condition_is_in": "Split (fair)"
+    "condition_its_condition_is_in": "Split (fair)",
+    "user": "628c539f35e12fe0f27fdf6c"
   }
 ]

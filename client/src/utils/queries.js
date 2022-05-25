@@ -11,21 +11,14 @@ export const QUERY_ITEMS = gql`
       category  
       user {
         _id
+        username
+        email
       } 
     }
   }
 `;
 
-// itemText
-//       createdAt
-//       username
-//       commentCount
-//       comments {
-//         _id
-//         createdAt
-//         username
-//         reactionBody
-//       }
+
 
 export const QUERY_ITEM = gql`
   query item($id: ID!) {
@@ -38,6 +31,8 @@ export const QUERY_ITEM = gql`
       category 
       user {
           _id
+          username
+          email
       }  
     }
   }

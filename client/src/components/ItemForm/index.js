@@ -63,6 +63,8 @@ const ItemForm = () => {
             // clear form value
             setDescription('');
             setCharacterCount(0);
+            setName('')
+            setPrice(0)
           } catch (e) {
             console.error(e);
           }
@@ -95,7 +97,7 @@ const ItemForm = () => {
   
   
   <label htmlFor="description">Description</label>
-  <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange}id="description" name="description" onChange={handleChange} ></textarea>
+  <textarea className="btn col-12 col-md-8" type="text" placeholder="Item Description" value={description} onChange={handleChange}id="description" name="description"  ></textarea>
 
   
 
@@ -108,7 +110,10 @@ const ItemForm = () => {
 
         
         <label htmlFor="category-names">Choose a category: </label>
-        <select className="btn col-12 col-md-8" name="category-names" id="category-names">
+        <select className="btn col-12 col-md-8" name="category-names" id="category-names" onChange={(e) => {
+          setCategory(e.target.value)
+          console.log(category)
+        }}>
             <option value="bowling">Bowling</option>
             <option value="rugs">Rugs</option>
             <option value="Alcohol">Alcohol</option>
@@ -119,7 +124,10 @@ const ItemForm = () => {
    
         
         <label htmlFor="condition-names">Condition Its Condition Is In: </label>
-        <select className="btn col-12 col-md-8" name="condition-names" id="condition-names">
+        <select className="btn col-12 col-md-8" name="condition-names" id="condition-names" onChange={(e) => {
+          setCondition(e.target.value)
+          console.log(condition_its_condition_is_in)
+        }}>
             <option value="gutter">Gutter Bad</option>
             <option value="split">Split Fair</option>
             <option value="spare">Spare Good</option>
