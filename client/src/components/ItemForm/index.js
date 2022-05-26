@@ -65,12 +65,7 @@ const ItemForm = () => {
       return (
         <div className="main-form">
             <h3>Item Form</h3>
-            <p
-            className={`m-0 ${characterCount === 280 || error ? 'text-error' : ''}`}
-          >
-            Character Count: {characterCount}/280
-            {error && <span className="ml-2">Something went wrong...</span>}
-          </p>
+            
           <form className="flex-row justify-center justify-space-between-md align-stretch"  onSubmit={handleFormSubmit}>
           <label className= " col-12 col-md-8" htmlFor="item-name"></label>
       <input className="btn col-12 col-md-8 "  type="text" placeholder="Item Name" id="item-name" name="item-name" onBlur={(e) => {
