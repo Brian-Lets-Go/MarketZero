@@ -24,6 +24,9 @@ startServer();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 db.once('open', () => {
     app.listen(PORT, () => {
