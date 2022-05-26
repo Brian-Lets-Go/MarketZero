@@ -1,0 +1,38 @@
+[
+  {
+    "username": "The_Dude",
+    "email": "thedude@mail.com",
+    "password": "Password123",
+    "age": 18
+  },
+  {
+    "username": "El_Duderino",
+    "email": "elDuderino@mail.com",
+    "password": "Password123",
+    "age": 25
+  },
+  {
+    "username": "his_dudeness",
+    "email": "hisDudeness@mail.com",
+    "password": "Password123",
+    "age": 20
+  },
+  {
+    "username": "Duder",
+    "email": "duder@mail.com",
+    "password": "Password123",
+    "age": 30
+  },
+  {
+    "username": "aBrevityThing",
+    "email": "itsabrevitything@mail.com",
+    "password": "Password123",
+    "age": 35
+  },
+  {
+    "username": "whatdayisit",
+    "email": "whatDayIsIt@mail.com",
+    "password": "Password123",
+    "age": 40
+  }
+]
