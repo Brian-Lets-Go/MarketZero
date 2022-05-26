@@ -3,15 +3,15 @@ import React from 'react';
 import ItemForm from '../components/ItemForm';
 
 import Auth from '../utils/auth';
-import { useQuery } from '@apollo/client';
-import { QUERY_ITEMS, QUERY_ME_BASIC } from '../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_ITEMS } from '../utils/queries';
 
 import '../index.css';
 import "../fonts/BancoRegular.woff";
 
 const ItemFormPage = () => {
-    const { loading, data } = useQuery(QUERY_ITEMS);
-    const { data: userData } = useQuery(QUERY_ME_BASIC);
+    // const { loading, data } = useQuery(QUERY_ITEMS);
+    // const { data: userData } = useQuery(QUERY_ME_BASIC);
 
     const items = data?.items || [];
     console.log(items);
