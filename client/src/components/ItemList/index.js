@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ItemList = ({ items, title }) => {
-  if (!items.length) {
+const ItemList = ({ items }) => {
+    console.log(items)
+  if (!items) {
     return <h3>No Items Yet</h3>;
   }
 
@@ -25,10 +26,12 @@ const ItemList = ({ items, title }) => {
             <div className="card-body">
               <Link to={`/item/${item._id}`}>
                 <p>{item.name}</p>
+                <p>{item.category}</p>
                 <p className="mb-0">
                   Description: {item.description}
                 </p>
                 <p> Price: {item.price} </p>
+                <p>Condition its condition is in: {item.condition_its_condition_is_in} </p>
               </Link>
             </div>
           </div>
