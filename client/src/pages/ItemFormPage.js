@@ -13,8 +13,8 @@ const ItemFormPage = () => {
     // const { loading, data } = useQuery(QUERY_ITEMS);
     // const { data: userData } = useQuery(QUERY_ME_BASIC);
 
-    const items = data?.items || [];
-    console.log(items);
+    // const items = data?.items || [];
+    // console.log(items);
 
     const loggedIn = Auth.loggedIn();
 
