@@ -17,7 +17,6 @@ type Item {
     price: Float
     condition_its_condition_is_in: String
     category: String
-    user: String
 }
 
 type Auth {

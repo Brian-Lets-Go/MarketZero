@@ -11,7 +11,7 @@ db.once('open', async () => {
   
 
   const items = await Item.insertMany(itemData);
-  // const users = await User.insertMany(userData);
+  const users = await User.insertMany(userData);
 
   console.log('all done!');
   process.exit(0);
