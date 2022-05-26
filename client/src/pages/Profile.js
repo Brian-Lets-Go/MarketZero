@@ -3,7 +3,7 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 
 import ItemList from '../components/ItemList';
-import ItemForm from '../components/ItemForm';
+// import ItemForm from '../components/ItemForm';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -34,6 +34,8 @@ const Profile = (props) => {
       );
   }
 
+  console.log(userParam)
+
   return (
     <div>
       <div className="flex-row mb-3">
@@ -51,7 +53,7 @@ const Profile = (props) => {
         </div>
 
       </div>
-      <div className="mb-3">{!userParam && <ItemForm />}</div>
+      {/* <div className="mb-3">{!userParam && <ItemForm />}</div> */}
     </div>
   );
 };

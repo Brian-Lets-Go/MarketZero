@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
-
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const itemSchema = new Schema({
   name: {
@@ -11,9 +10,6 @@ const itemSchema = new Schema({
   description: {
     type: String
   },
-  image: {
-    type: String
-  },
   price: {
     type: Number,
     required: true,
@@ -21,25 +17,27 @@ const itemSchema = new Schema({
   },
   condition_its_condition_is_in:  {
     type: String,
-    // required: true
-    },
-  category:
-    {
-      type: String,
-      // required: true
-    },
-  comments:
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Comment'
-    },
-    user:
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'User'
-    }
-});
+  },
+  category: {
+    type: String,
+  },
 
-const Item = mongoose.model('Item', itemSchema);
+  // username: {
+  //   type: String,
+  //   required: true
+  // }
+  },
+  {
+    toJSON: {
+      virtuals: true
+    }
+  }
+);
+
+itemSchema.virtual("user").get(function() {
+    return server.context.user.username
+})
+
+const Item = model('Item', itemSchema);
 
 module.exports = Item;

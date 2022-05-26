@@ -2,64 +2,50 @@
   {
     "name": "Bowling Ball",
     "description": "I bowled my first 300 with this ball.",
-    "image": "Coming soon",
     "price": 55,
-    "category": "Bowling",
-    "condition_its_condition_is_in": "Spare (good)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Excellent",
+    "category": "Bowling"
   },
   {
     "name": "White Russian",
     "description": "This is the only drink you will ever want.",
-    "image": "Coming soon",
     "price": 7,
-    "category": "Alchohol",
-    "condition_its_condition_is_in": "Split (fair)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Good",
+    "category": "Alcohol"
   },
   {
     "name": "Rug",
     "description": "It really ties the room together",
-    "image": "Coming soon",
     "price": 30,
-    "category": "Rugs",
-    "condition_its_condition_is_in": "Spare (good)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Great",
+    "category": "Rugs"
   },
   {
     "name": "Living Room Rug",
-    "description": "It was a family heirloom",
-    "image": "Coming soon",
+    "description": "It was a familt heirloom",
     "price": 20,
-    "category": "Rugs",
-    "condition_its_condition_is_in": "Split (fair)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Excellent",
+    "category": "Rugs"
   },
   {
     "name": "Folgers Can",
     "description": "It's a modest recepticle",
-    "image": "Coming soon",
     "price": 5,
-    "category": "Berevement Receptical",
-    "condition_its_condition_is_in": "Gutter (poor)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Fair",
+    "category": "Recepticles"
   },
   {
     "name": "Eagles Album",
     "description": "Maybe you like the eagles. Maybe you don't",
-    "image": "Coming soon",
     "price": 3,
-    "category": "Miscelleneous",
-    "condition_its_condition_is_in": "Spare (good)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Poor",
+    "category": "Miscellaneous"
   },
   {
     "name": "Bowling Shoes",
     "description": "You will bowl better in these",
-    "image": "Coming soon",
     "price": 15,
-    "category": "Bowling",
-    "condition_its_condition_is_in": "Split (fair)",
-    "user": "628c539f35e12fe0f27fdf6c"
+    "condition_its_condition_is_in": "Excellent",
+    "category": "Bowling"
   }
 ]

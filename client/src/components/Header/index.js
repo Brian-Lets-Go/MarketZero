@@ -44,7 +44,9 @@ import Auth from '../../utils/auth';
             <nav className="text-center">
                 {Auth.loggedIn() ? (
                     <>
+                    <Link to='/'>Home</Link>
                     <Link to='/profile'>My Account</Link>
+                    <Link to='/itemform'>Item Form</Link>
                     <a href='/' onClick={logout}>
                         Logout
                     </a>

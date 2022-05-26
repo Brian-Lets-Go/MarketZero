@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ItemList = ({ items }) => {
-  if (!items.length) {
+    console.log(items)
+  if (!items) {
     return <h3>No Items Yet</h3>;
   }
 
