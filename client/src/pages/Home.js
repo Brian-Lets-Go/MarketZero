@@ -9,6 +9,13 @@ import { QUERY_ITEMS } from '../utils/queries';
 import '../index.css';
 import "../fonts/BancoRegular.woff";
 
+import all from '../images/all.gif';
+import bowling from '../images/bowling.gif';
+import alcohol from '../images/white-russian.gif';
+import rug from '../images/rug-top.gif';
+import bereavement from '../images/bereavement.gif';
+import other from '../images/mug.gif';
+
 const Home = () => {
   const { loading, data } = useQuery(QUERY_ITEMS);
   // const { data: userData } = useQuery(QUERY_ME_BASIC);
