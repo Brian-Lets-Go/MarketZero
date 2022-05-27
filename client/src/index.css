@@ -170,6 +170,62 @@ nav a:hover {
   font-size: 2.5rem;
 }
 
+#items {
+  display: flex;
+  background-color: #cdbaac;
+}
+
+.category-section {
+  display: flex;
+  justify-content: center;
+}
+
+.section-bg {
+  padding: 1%;
+}
+
+.gif-section {
+  position: relative;
+  max-height: 90%;
+}
+
+.gif {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(102, 110, 147, 0.5);
+  color: var(--dark);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 1.6vw;
+  padding: 1.5%;
+  text-align: center;
+}
+
+.gif-section:hover .overlay {
+  opacity: 1;
+}
+
+.btn,
+.pill {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  border: none;
+  color: var(--dark);
+  outline: none;
+  background-color: var(--secondary);
+  transition: all 0.5s;
+}
+
 .btn,
 .pill {
   font-size: 1.3rem;
